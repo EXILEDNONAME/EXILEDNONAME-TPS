@@ -26,6 +26,8 @@
           </a>
         </li>
 
+        @include('pages.backend.__includes.sidebar-item')
+        
         <li class="menu-section">
           <h5 class="menu-text"> EXTENSIONS </h5>
           <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
