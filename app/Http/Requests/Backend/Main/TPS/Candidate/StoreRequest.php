@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Backend\Main\TPS\Customer;
+namespace App\Http\Requests\Backend\Main\TPS\Candidate;
 
 use Illuminate\Foundation\Http\FormRequest;
 

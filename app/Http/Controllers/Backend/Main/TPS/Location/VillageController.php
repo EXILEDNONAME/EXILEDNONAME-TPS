@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main\TPS;
+namespace App\Http\Controllers\Backend\Main\TPS\Location;
 
 use Auth;
 use DataTables;
@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\Main\TPS\Customer\StoreRequest;
-use App\Http\Requests\Backend\Main\TPS\Customer\UpdateRequest;
+use App\Http\Requests\Backend\Main\TPS\Candidate\StoreRequest;
+use App\Http\Requests\Backend\Main\TPS\Candidate\UpdateRequest;
 
-class CustomerController extends Controller {
+class VillageController extends Controller {
 
   /**
   **************************************************
@@ -25,9 +25,9 @@ class CustomerController extends Controller {
   public function __construct() {
 
     $this->middleware('auth');
-    $this->url = '/dashboard/tps/customers';
-    $this->path = 'pages.backend.main.tps.customer.';
-    $this->model = 'App\Models\Backend\Main\TPS\Customer';
+    $this->url = '/dashboard/tps/location/villages';
+    $this->path = 'pages.backend.main.tps.location.village.';
+    $this->model = 'App\Models\Backend\Main\TPS\Location\Village';
 
     if (request('date_start') && request('date_end')) { $this->data = $this->model::orderby('date_start', 'desc')->whereBetween('date_start', [request('date_start'), request('date_end')])->get(); }
     else { $this->data = $this->model::get(); }

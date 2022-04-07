@@ -1,5 +1,5 @@
 @extends('layouts.datatable.__show', ['status' => 'false', 'daterange' => 'false'])
-@push('title', 'TPS Customers')
+@push('title', 'Table Generals')
 
 @push('content-body')
 <tr>

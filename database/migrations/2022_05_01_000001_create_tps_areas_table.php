@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTPSCustomersTable extends Migration {
+class CreateTPSAreasTable extends Migration {
   public function up() {
-    Schema::create('tps_customers', function (Blueprint $table) {
+    Schema::create('tps_areas', function (Blueprint $table) {
       $table->increments('id');
       $table->timestamp('date_start')->nullable();
       $table->timestamp('date_end')->nullable();
@@ -23,6 +23,6 @@ class CreateTPSCustomersTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('tps_customers');
+    Schema::dropIfExists('tps_areas');
   }
 }
