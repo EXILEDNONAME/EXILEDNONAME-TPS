@@ -12,7 +12,7 @@ class Village extends Model {
 
   use LogsActivity, SoftDeletes;
 
-  protected $table = 'tps_villages';
+  protected $table = 'tps_location_villages';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 
@@ -22,7 +22,7 @@ class Village extends Model {
     return LogOptions::defaults()->logOnly(['*']);
   }
 
-  public function tps_districts(){
+  public function tps_location_districts(){
     return $this->belongsTo(District::class, 'id_district');
   }
 

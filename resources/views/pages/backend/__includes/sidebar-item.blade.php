@@ -33,34 +33,34 @@
   </div>
 </li>
 
-<li class="menu-item {{ (request()->is('dashboard/dummy/tables*')) ? 'menu-item-submenu menu-item-here menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+<li class="menu-item {{ (request()->is('dashboard/tps/participants*')) ? 'menu-item-submenu menu-item-here menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
   <a class="menu-link menu-toggle">
     <i class="menu-icon fas fa-table"></i>
-    <span class="menu-text"> Peserta </span>
+    <span class="menu-text"> Participants </span>
     <i class="menu-arrow"></i>
   </a>
   <div class="menu-submenu" style="">
     <i class="menu-arrow"></i>
     <ul class="menu-subnav">
-      <li class="menu-item {{ (request()->is('dashboard/dummy/tables/generals*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-        <a class="menu-link" onclick="location.href='/dashboard/dummy/tables/generals';">
+      <li class="menu-item {{ (request()->is('dashboard/tps/participants/create*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+        <a class="menu-link" onclick="location.href='/dashboard/tps/participants/create';">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
-          <span class="menu-text"> Tambah Peserta </span>
+          <span class="menu-text"> Create </span>
         </a>
       </li>
-      <li class="menu-item {{ (request()->is('dashboard/dummy/tables/generals*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-        <a class="menu-link" onclick="location.href='/dashboard/dummy/tables/generals';">
+      <li class="menu-item {{ (request()->is('dashboard/tps/participants*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+        <a class="menu-link" onclick="location.href='/dashboard/tps/participants';">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
-          <span class="menu-text"> Semua Peserta </span>
+          <span class="menu-text"> All Participants </span>
         </a>
       </li>
     </ul>
   </div>
 </li>
 
-<li class="menu-item {{ (request()->is('dashboard/statistics*')) ? 'menu-item-active' : '' }}">
-  <a class="menu-link" onclick="location.href='/dashboard/statistics';">
+<li class="menu-item {{ (request()->is('dashboard/tps/selections*')) ? 'menu-item-active' : '' }}">
+  <a class="menu-link" onclick="location.href='/dashboard/tps/selections';">
     <i class="menu-icon fas fa-bug"></i>
-    <span class="menu-text"> Seleksi </span>
+    <span class="menu-text"> Selections </span>
   </a>
 </li>

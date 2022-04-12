@@ -56,3 +56,22 @@ Route::group([
   Route::get('trash', 'VillageController@trash')->name('trash');
   Route::resource('/', 'VillageController')->parameters(['' => 'id']);
 });
+
+// PARTICIPANTS
+Route::group([
+  'as' => 'system.main.tps.participant.',
+  'prefix' => 'dashboard/tps/participants',
+  'namespace' => 'App\Http\Controllers\Backend\Main\TPS',
+], function(){
+  Route::get('active/{id}', 'ParticipantController@active')->name('active');
+  Route::get('inactive/{id}', 'ParticipantController@inactive')->name('inactive');
+  Route::get('restore/{id}', 'ParticipantController@restore')->name('restore');
+  Route::get('restoreall', 'ParticipantController@restoreall')->name('restore-all');
+  Route::get('delete-permanent/{id}', 'ParticipantController@delete_permanent')->name('delete-permanent');
+  Route::get('delete-permanentall', 'ParticipantController@delete_permanentall')->name('delete-permanentall');
+  Route::get('delete/{id}', 'ParticipantController@delete')->name('delete');
+  Route::get('deleteall', 'ParticipantController@deleteall')->name('delete-all');
+  Route::get('history', 'ParticipantController@history')->name('history');
+  Route::get('trash', 'ParticipantController@trash')->name('trash');
+  Route::resource('/', 'ParticipantController')->parameters(['' => 'id']);
+});

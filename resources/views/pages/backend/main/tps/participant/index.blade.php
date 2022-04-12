@@ -1,5 +1,5 @@
 @extends('layouts.datatable.__index', ['page' => 'index', 'daterange' => 'false', 'status' => 'false', 'chart' => 'true'])
-@push('title', 'Location Areas')
+@push('title', 'Participants')
 
 @push('table-header')
 <th> Name </th>

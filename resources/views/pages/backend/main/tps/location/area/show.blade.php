@@ -1,5 +1,5 @@
 @extends('layouts.datatable.__show', ['status' => 'false', 'daterange' => 'false'])
-@push('title', 'Table Generals')
+@push('title', 'Location Areas')
 
 @push('content-body')
 <tr>

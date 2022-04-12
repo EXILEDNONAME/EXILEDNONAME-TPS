@@ -1,2 +1,2 @@
 @extends('layouts.datatable.__create', ['status' => 'false', 'daterange' => 'false'])
-@push('title', 'Location Areas')
+@push('title', 'Participants')

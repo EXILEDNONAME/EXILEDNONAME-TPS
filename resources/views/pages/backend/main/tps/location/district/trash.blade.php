@@ -1,5 +1,5 @@
 @extends('layouts.datatable.__trash', ['daterange' => 'false', 'status' => 'false'])
-@push('title', 'Table Generals')
+@push('title', 'Location Districts')
 
 @push('table-header')
 <th width="1" class="text-nowrap"> Deleted At </th>

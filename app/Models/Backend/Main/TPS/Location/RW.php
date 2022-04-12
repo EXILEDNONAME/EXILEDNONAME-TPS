@@ -11,7 +11,7 @@ class RW extends Model {
 
   use LogsActivity, SoftDeletes;
 
-  protected $table = 'tps_rws';
+  protected $table = 'tps_location_rws';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 

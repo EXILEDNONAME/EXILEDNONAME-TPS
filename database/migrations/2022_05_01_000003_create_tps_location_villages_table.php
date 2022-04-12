@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTPSRwsTable extends Migration {
+class CreateTPSLocationVillagesTable extends Migration {
   public function up() {
-    Schema::create('tps_rws', function (Blueprint $table) {
+    Schema::create('tps_location_villages', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_village')->unsigned();
+      $table->integer('id_district')->unsigned();
       $table->timestamp('date_start')->nullable();
       $table->timestamp('date_end')->nullable();
       $table->string('name');
@@ -20,11 +20,11 @@ class CreateTPSRwsTable extends Migration {
       $table->integer('updated_by')->nullable()->default('0');
       $table->timestamps();
       $table->softDeletes();
-      $table->foreign('id_village')->references('id')->on('tps_villages')->onDelete('restrict')->onUpdate('restrict');
+      $table->foreign('id_district')->references('id')->on('tps_location_districts')->onDelete('restrict')->onUpdate('restrict');
     });
   }
 
   public function down() {
-    Schema::dropIfExists('tps_rws');
+    Schema::dropIfExists('tps_location_villages');
   }
 }

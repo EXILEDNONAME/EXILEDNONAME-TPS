@@ -12,7 +12,7 @@ class District extends Model {
 
   use LogsActivity, SoftDeletes;
 
-  protected $table = 'tps_districts';
+  protected $table = 'tps_location_districts';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 
@@ -22,7 +22,7 @@ class District extends Model {
     return LogOptions::defaults()->logOnly(['*']);
   }
 
-  public function tps_areas(){
+  public function tps_location_areas(){
     return $this->belongsTo(Area::class, 'id_area');
   }
 

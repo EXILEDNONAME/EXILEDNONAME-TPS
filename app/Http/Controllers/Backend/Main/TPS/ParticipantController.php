@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\Main\TPS\Candidate\StoreRequest;
-use App\Http\Requests\Backend\Main\TPS\Candidate\UpdateRequest;
+use App\Http\Requests\Backend\Main\TPS\Participant\StoreRequest;
+use App\Http\Requests\Backend\Main\TPS\Participant\UpdateRequest;
 
-class CandidateController extends Controller {
+class ParticipantController extends Controller {
 
   /**
   **************************************************
@@ -25,9 +25,9 @@ class CandidateController extends Controller {
   public function __construct() {
 
     $this->middleware('auth');
-    $this->url = '/dashboard/tps/candidates';
-    $this->path = 'pages.backend.main.tps.candidate.';
-    $this->model = 'App\Models\Backend\Main\TPS\Candidate';
+    $this->url = '/dashboard/tps/participants';
+    $this->path = 'pages.backend.main.tps.participant.';
+    $this->model = 'App\Models\Backend\Main\TPS\Participant';
 
     if (request('date_start') && request('date_end')) { $this->data = $this->model::orderby('date_start', 'desc')->whereBetween('date_start', [request('date_start'), request('date_end')])->get(); }
     else { $this->data = $this->model::get(); }

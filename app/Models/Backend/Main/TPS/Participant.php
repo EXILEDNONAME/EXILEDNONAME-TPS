@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\Backend\Main\TPS\Location;
+namespace App\Models\Backend\Main\TPS;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 
-class Area extends Model {
+class Participant extends Model {
 
   use LogsActivity, SoftDeletes;
 
-  protected $table = 'tps_location_areas';
+  protected $table = 'tps_participants';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 
