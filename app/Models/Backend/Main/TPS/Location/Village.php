@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
+use App\Models\Backend\Main\TPS\Location\District;
 
 class Village extends Model {
 
@@ -19,6 +20,10 @@ class Village extends Model {
 
   public function getActivitylogOptions(): LogOptions {
     return LogOptions::defaults()->logOnly(['*']);
+  }
+
+  public function tps_districts(){
+    return $this->belongsTo(District::class, 'id_district');
   }
 
 }

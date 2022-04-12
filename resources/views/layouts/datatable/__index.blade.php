@@ -553,6 +553,7 @@ var KTDatatablesExtensionsKeytable = function() {
       $('.filter-active').val('');
       $('.filter-status').val('');
       $('.filter-tps-areas').val('');
+      $('.filter-tps-districts').val('');
       $('#date_start').val('');
       $('#date_end').val('');
       table.search( '' ).columns().search( '' ).draw();
