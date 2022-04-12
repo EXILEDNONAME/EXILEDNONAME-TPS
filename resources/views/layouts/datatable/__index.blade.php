@@ -552,6 +552,7 @@ var KTDatatablesExtensionsKeytable = function() {
     $('#reset').click(function(){
       $('.filter-active').val('');
       $('.filter-status').val('');
+      $('.filter-tps-areas').val('');
       $('#date_start').val('');
       $('#date_end').val('');
       table.search( '' ).columns().search( '' ).draw();
