@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
       $this->call(Main\Districts::class);
       $this->call(Main\Villages::class);
       $this->call(Main\RWS::class);
+      $this->call(Main\ParticipantPositions::class);
+      $this->call(Main\ParticipantEducations::class);
 
     }
 }
