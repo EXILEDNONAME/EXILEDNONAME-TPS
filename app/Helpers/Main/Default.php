@@ -24,3 +24,8 @@ function participant_educations() {
   $items = ParticipantEducation::orderBy('sort','asc')->where('active', 1)->pluck('name', 'id')->toArray();
   return $items;
 }
+
+function tps_location_areas() {
+  $items = Area::orderBy('sort','asc')->where('active', 1)->pluck('name', 'id')->toArray();
+  return $items;
+}

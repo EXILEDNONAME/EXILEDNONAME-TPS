@@ -75,3 +75,24 @@ Route::group([
   Route::get('trash', 'ParticipantController@trash')->name('trash');
   Route::resource('/', 'ParticipantController')->parameters(['' => 'id']);
 });
+
+// SELECTIONS
+Route::group([
+  'as' => 'system.main.tps.selection.',
+  'prefix' => 'dashboard/tps/selections',
+  'namespace' => 'App\Http\Controllers\Backend\Main\TPS',
+], function(){
+  Route::get('area/{id}','SelectionController@getarea')->name('get-area');
+  Route::get('district/{id}','SelectionController@getdistrict')->name('get-district');
+  Route::get('active/{id}', 'SelectionController@active')->name('active');
+  Route::get('inactive/{id}', 'SelectionController@inactive')->name('inactive');
+  Route::get('restore/{id}', 'SelectionController@restore')->name('restore');
+  Route::get('restoreall', 'SelectionController@restoreall')->name('restore-all');
+  Route::get('delete-permanent/{id}', 'SelectionController@delete_permanent')->name('delete-permanent');
+  Route::get('delete-permanentall', 'SelectionController@delete_permanentall')->name('delete-permanentall');
+  Route::get('delete/{id}', 'SelectionController@delete')->name('delete');
+  Route::get('deleteall', 'SelectionController@deleteall')->name('delete-all');
+  Route::get('history', 'SelectionController@history')->name('history');
+  Route::get('trash', 'SelectionController@trash')->name('trash');
+  Route::resource('/', 'SelectionController')->parameters(['' => 'id']);
+});
