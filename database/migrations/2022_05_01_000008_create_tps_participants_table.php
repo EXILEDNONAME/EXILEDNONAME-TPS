@@ -12,6 +12,7 @@ class CreateTPSParticipantsTable extends Migration {
       $table->integer('id_position')->unsigned();
       $table->timestamp('date_start')->nullable();
       $table->timestamp('date_end')->nullable();
+      $table->string('nik');
       $table->string('name');
       $table->string('email');
       $table->string('phone');

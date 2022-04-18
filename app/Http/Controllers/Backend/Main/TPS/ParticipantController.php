@@ -84,8 +84,25 @@ class ParticipantController extends Controller {
   **/
 
   public function store(StoreRequest $request) {
+    $destination = base_path() . '/public/files/participants/' . $request->get('nik');
+
+    $photo_live = time().'_'. $request->file('photo_live')->getClientOriginalName();
+    $request->file('photo_live')->move($destination, $photo_live);
+
+    $photo_ktp = time().'_'. $request->file('photo_ktp')->getClientOriginalName();
+    $request->file('photo_ktp')->move($destination, $photo_ktp);
+
+    $photo_kk = time().'_'. $request->file('photo_kk')->getClientOriginalName();
+    $request->file('photo_kk')->move($destination, $photo_kk);
+
     $store = $request->all();
+    $store['photo_live'] = $photo_live;
+    $store['photo_ktp'] = $photo_ktp;
+    $store['photo_kk'] = $photo_kk;
     $this->model::create($store);
+
+
+
     $userSchema = User::first();
     return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
 

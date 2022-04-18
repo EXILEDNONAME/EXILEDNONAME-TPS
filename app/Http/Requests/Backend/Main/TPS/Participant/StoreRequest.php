@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
   {
     return [
       'name' => 'required|min:3',
-      'nik'  => 'required|numeric|digits:1',
+      'nik'  => 'required|numeric|digits:16',
     ];
   }
 }

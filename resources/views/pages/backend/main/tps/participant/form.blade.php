@@ -33,7 +33,7 @@
 <div class="form-group row">
   <label class="col-lg-3 col-form-label"> Photo Live </label>
   <div class="col-lg-9">
-    <input type="file" name="image" accept="image/*" capture>
+    <input type="file" name="photo_live" accept="image/*" capture>
     @error('photo_live') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>
@@ -41,7 +41,7 @@
 <div class="form-group row">
   <label class="col-lg-3 col-form-label"> Photo KTP </label>
   <div class="col-lg-9">
-    <input type="file" name="image" accept="image/*" capture>
+    <input type="file" name="photo_ktp" accept="image/*" capture>
     @error('photo_ktp') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>
@@ -49,7 +49,7 @@
 <div class="form-group row">
   <label class="col-lg-3 col-form-label"> Photo KK </label>
   <div class="col-lg-9">
-    <input type="file" name="image" accept="image/*" capture>
+    <input type="file" name="photo_kk" accept="image/*" capture>
     @error('photo_kk') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>

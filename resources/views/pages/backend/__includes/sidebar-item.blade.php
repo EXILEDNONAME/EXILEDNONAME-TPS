@@ -48,7 +48,7 @@
           <span class="menu-text"> Create </span>
         </a>
       </li>
-      <li class="menu-item {{ (request()->is('dashboard/tps/participants*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+      <li class="menu-item {{ (request()->is('dashboard/tps/participants')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a class="menu-link" onclick="location.href='/dashboard/tps/participants';">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
           <span class="menu-text"> All Participants </span>
