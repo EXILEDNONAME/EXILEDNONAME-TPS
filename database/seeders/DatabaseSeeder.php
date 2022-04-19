@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
       $this->call(Main\RWS::class);
       $this->call(Main\ParticipantPositions::class);
       $this->call(Main\ParticipantEducations::class);
+      $this->call(Main\ParticipantJobs::class);
+      $this->call(Main\ParticipantReligions::class);
 
     }
 }

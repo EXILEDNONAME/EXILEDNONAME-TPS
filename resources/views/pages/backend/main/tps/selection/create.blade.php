@@ -5,6 +5,9 @@
 <script type="text/javascript">
 $(document).ready(function () {
 
+  $('#id_district').find('option').not(':first').remove();
+  $('#village').find('option').not(':first').remove();
+  
   $('#id_area').change(function () {
     var id = $(this).val();
     $('#id_district').find('option').not(':first').remove();
