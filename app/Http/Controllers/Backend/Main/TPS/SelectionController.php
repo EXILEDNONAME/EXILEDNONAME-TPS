@@ -16,8 +16,8 @@ use App\Models\Backend\Main\TPS\Location\Area;
 use App\Models\Backend\Main\TPS\Location\District;
 use App\Models\Backend\Main\TPS\Location\Village;
 
-use App\Http\Requests\Backend\Main\TPS\Participant\StoreRequest;
-use App\Http\Requests\Backend\Main\TPS\Participant\UpdateRequest;
+use App\Http\Requests\Backend\Main\TPS\Selection\StoreRequest;
+use App\Http\Requests\Backend\Main\TPS\Selection\UpdateRequest;
 
 class SelectionController extends Controller {
 
@@ -62,6 +62,32 @@ class SelectionController extends Controller {
       return DataTables::of($this->data)
       ->editColumn('date_start', function($order) { return \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function($order) { return \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
+      ->editColumn('id_participants_nik', function($order) { return $order->tps_participants->nik; })
+      ->editColumn('id_participants_name', function($order) { return $order->tps_participants->name; })
+      ->editColumn('id_positions', function($order) { return $order->tps_participants->tps_positions->name; })
+      ->editColumn('id_areas', function($order) {
+        return $order->tps_location_areas->name;
+      })
+      ->editColumn('id_districts', function($order) {
+        return $order->tps_location_districts->name;
+      })
+      ->editColumn('id_villages', function($order) {
+        if ($order->tps_participants->tps_positions->id == 1) { return '-'; }
+
+        if (!empty($order->tps_location_villages->name)) { return $order->tps_location_villages->name; }
+        else { return '';}
+      })
+      ->editColumn('rws', function($order) {
+        if ($order->tps_participants->tps_positions->id == 1) { return '-'; }
+        if ($order->tps_participants->tps_positions->id == 2) { return '-'; }
+        else { return $order->rw; }
+      })
+      ->editColumn('rts', function($order) {
+        if ($order->tps_participants->tps_positions->id == 1) { return '-'; }
+        if ($order->tps_participants->tps_positions->id == 2) { return '-'; }
+        if ($order->tps_participants->tps_positions->id == 3) { return '-'; }
+        else { return $order->rt; }
+      })
       ->rawColumns(['description'])
       ->addIndexColumn()
       ->make(true);

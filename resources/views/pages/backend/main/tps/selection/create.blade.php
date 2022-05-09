@@ -6,12 +6,12 @@
 $(document).ready(function () {
 
   $('#id_district').find('option').not(':first').remove();
-  $('#village').find('option').not(':first').remove();
-  
+  $('#id_village').find('option').not(':first').remove();
+
   $('#id_area').change(function () {
     var id = $(this).val();
     $('#id_district').find('option').not(':first').remove();
-    $('#village').find('option').not(':first').remove();
+    $('#id_village').find('option').not(':first').remove();
     $.ajax({
       url:'{{ URL::current() }}/../area/'+id,
       type:'get',
@@ -33,7 +33,7 @@ $(document).ready(function () {
 
   $('#id_district').change(function () {
     var id = $(this).val();
-    $('#village').find('option').not(':first').remove();
+    $('#id_village').find('option').not(':first').remove();
     $.ajax({
       url:'{{ URL::current() }}/../district/'+id,
       type:'get',
@@ -46,7 +46,7 @@ $(document).ready(function () {
             var id = response.data[i].id;
             var name = response.data[i].name;
             var option = "<option value='"+id+"'>"+name+"</option>";
-            $("#village").append(option);
+            $("#id_village").append(option);
           }
         }
       }
@@ -55,4 +55,13 @@ $(document).ready(function () {
 
 });
 </script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var id_participant = [];
+    $("#id_participant").select2({
+      data: id_participant
+    });
+  });
+</script>
+
 @endpush

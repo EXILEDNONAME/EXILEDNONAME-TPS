@@ -7,6 +7,7 @@ use App\Models\Backend\Main\TPS\ParticipantPosition;
 use App\Models\Backend\Main\TPS\ParticipantEducation;
 use App\Models\Backend\Main\TPS\ParticipantJob;
 use App\Models\Backend\Main\TPS\ParticipantReligion;
+use App\Models\Backend\Main\TPS\Participant;
 
 function filter_tps_location_areas() {
   $items = Area::orderBy('name','asc')->pluck('name', 'name')->toArray();
@@ -35,6 +36,18 @@ function participant_jobs() {
 
 function participant_religions() {
   $items = ParticipantReligion::orderBy('sort','asc')->where('active', 1)->pluck('name', 'id')->toArray();
+  return $items;
+}
+
+// function tps_participants() {
+//   $items = Participant::orderBy('sort','asc')->where('active', 1)->pluck('nik', 'id')->toArray();
+//   return $items;
+// }
+
+function tps_participants() {
+  $items = DB::table('tps_participants as a')
+    ->selectRaw('CONCAT(a.nik, " - ", a.name) as concatname, a.id')->where('a.active', 1)
+    ->pluck('concatname', 'a.id');
   return $items;
 }
 

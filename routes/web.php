@@ -121,3 +121,16 @@ Route::get('categories','App\Http\Controllers\CategoryController@index');
 Route::get('categories/{id}','App\Http\Controllers\CategoryController@getCategory')->name('categories');
 
 require __DIR__.'/backend/master.php';
+
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\SearchController;
+
+Route::get('search', [SearchController::class, 'index'])->name('search');
+
+
+Route::get('autocomplete', function (Request $request) {
+        $query = $request->get('query');
+        $filterResult = User::where('name', 'LIKE', '%'. $query. '%')->get();
+        return response()->json($filterResult);
+});

@@ -1,10 +1,11 @@
 <div class="form-group row">
-  <label class="col-lg-3 col-form-label"> NIK </label>
+  <label class="col-lg-3 col-form-label"> Participant </label>
   <div class="col-lg-9">
-    {!! Form::text('nik', (isset($data->nik) ? $data->nik : ''), ['class' => $errors->has('nik') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
-    @error('nik') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+    {!! Form::select('id_participant', tps_participants(), (isset($data->id_participant) ? $data->id_participant : NULL), ['id' => 'id_participant', 'placeholder' => '- Select Participant -', 'class' => 'form-control', 'required' => 'required']) !!}
+    @error('id_participant') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>
+
 
 <div class="form-group row">
   <label class="col-lg-3 col-form-label"> Area </label>
@@ -25,15 +26,15 @@
 <div class="form-group row">
   <label class="col-lg-3 col-form-label"> Village </label>
   <div class="col-lg-9">
-    {!! Form::select('village', tps_location_villages(), (isset($data->village) ? $data->village : NULL), ['id' => 'village', 'placeholder' => '- Select Village -', 'class' => 'form-control', 'required' => 'required']) !!}
-    @error('village') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+    {!! Form::select('id_village', tps_location_villages(), (isset($data->id_village) ? $data->id_village : NULL), ['id' => 'id_village', 'placeholder' => '- Select Village -', 'class' => 'form-control']) !!}
+    @error('id_village') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>
 
 <div class="form-group row">
   <label class="col-lg-3 col-form-label"> RT </label>
   <div class="col-lg-9">
-    {!! Form::number('rt', (isset($data->rt) ? $data->rt : ''), ['class' => $errors->has('rt') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+    {!! Form::number('rt', (isset($data->rt) ? $data->rt : ''), ['class' => $errors->has('rt') ? 'form-control is-invalid' : 'form-control']) !!}
     @error('rt') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>
@@ -41,7 +42,7 @@
 <div class="form-group row">
   <label class="col-lg-3 col-form-label"> RW </label>
   <div class="col-lg-9">
-    {!! Form::number('rw', (isset($data->rw) ? $data->rw : ''), ['class' => $errors->has('rw') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+    {!! Form::number('rw', (isset($data->rw) ? $data->rw : ''), ['class' => $errors->has('rw') ? 'form-control is-invalid' : 'form-control']) !!}
     @error('rw') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>
