@@ -22,11 +22,17 @@ class DatabaseSeeder extends Seeder
       $this->call(Main\Areas::class);
       $this->call(Main\Districts::class);
       $this->call(Main\Villages::class);
-      $this->call(Main\RWS::class);
       $this->call(Main\ParticipantPositions::class);
       $this->call(Main\ParticipantEducations::class);
       $this->call(Main\ParticipantJobs::class);
       $this->call(Main\ParticipantReligions::class);
+
+      $this->call(Main\RTRW\Dapil_1::class);
+      $this->call(Main\RTRW\Dapil_2::class);
+      $this->call(Main\RTRW\Dapil_3::class);
+      $this->call(Main\RTRW\Dapil_4::class);
+      $this->call(Main\RTRW\Dapil_5::class);
+      $this->call(Main\RTRW\Dapil_6::class);
 
     }
 }

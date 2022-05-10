@@ -19,6 +19,11 @@ function filter_tps_location_districts() {
   return $items;
 }
 
+function filter_tps_location_villages() {
+  $items = Village::orderBy('name','asc')->pluck('name', 'name')->toArray();
+  return $items;
+}
+
 function participant_positions() {
   $items = ParticipantPosition::orderBy('sort','asc')->where('active', 1)->pluck('name', 'id')->toArray();
   return $items;
